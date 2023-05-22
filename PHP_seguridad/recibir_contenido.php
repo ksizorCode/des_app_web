@@ -14,9 +14,9 @@ $texto = $_GET['texto'];
 //Verificar si los campos exiten o están vacíos
 // ---------------------------------------------
 
-//if(empty($nombre) || empty($email) || empty($telefono) || empty($texto)){
-//    echo "Porfavor, rellne todos los campos del formulario (volver atrás)";
-//}
+// if(empty($nombre) || empty($email) || empty($telefono) || empty($texto)){
+//     echo "Porfavor, rellne todos los campos del formulario (volver atrás)";
+// }
 
 //Como hacer esto uno por uno es un rollo.
 // para no crear lo mismo una y otra vez voy a crear un array
@@ -27,7 +27,7 @@ $campos =[ $nombre, $email, $telefono, $texto];
 
 if(in_array("",$campos)){
     //si algún campo está vació, mostrar un mensaje de error
-     echo "Porfavor, rellene todos los campos del formulario (volver atrás)";
+     echo "<p>Porfavor, rellene todos los campos del formulario (volver atrás)</p>";
 }
 
 function limpiarEntrada($dato){

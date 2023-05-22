@@ -11,8 +11,9 @@ echo '</pre>';
 
 $datosBruto = $_GET; // Obtiene todos los datos GET
 
+
 //print_r de lso datos
-miPrintR($datosBruto,'CONTENIDO RECIBIDO EN BRUTO');
+miPrintR($datosBruto,'CONTENIDO RECIBIDO EN BRUTO---');
 
 
 //función para limpiar y sanitizar campos

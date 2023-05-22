@@ -23,9 +23,9 @@
     <input type="email" id="email" name="email" required>
 
     <label for="telefono">Telefono</label>
-    <input type="number" min="600000000" max=799999999 id="telefono" name="telefono" required>
+    <input type="tel" min="600000000" max="799999999" id="telefono" name="telefono" required>
 
-    <label for="texto"></label>
+    <label for="texto">Inserte un Comentario de texto</label>
     <textarea name="texto" id="texto" cols="30" rows="10" required></textarea>
 
     <input type="submit" value="Enviar">
