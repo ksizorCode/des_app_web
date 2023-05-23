@@ -1,5 +1,5 @@
 <ul>
-    <li><a href="index.php">Inicio</a></li>
-    <li><a href="proyectos.php">Proyectos</a></li>
-    <li><a href="contacto.php">Contacto</a></li>
+    <li><a href="<? echo $url?>">Inicio</a></li>
+    <li><a href="<? echo $url?>proyectos">Proyectos</a></li>
+    <li><a href="<? echo $url?>contacto">Contacto</a></li>
 </ul>
