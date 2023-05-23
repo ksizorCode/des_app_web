@@ -1,6 +1,5 @@
 <?php
 
-
 function miPrintR($valor, $txt="algo"){
 echo '<pre>';
 echo '//'.$txt;
@@ -8,13 +7,10 @@ print_r($valor);
 echo '</pre>';
 }
 
-
 $datosBruto = $_GET; // Obtiene todos los datos GET
-
 
 //print_r de lso datos
 miPrintR($datosBruto,'CONTENIDO RECIBIDO EN BRUTO---');
-
 
 //función para limpiar y sanitizar campos
 
