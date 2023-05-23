@@ -1,45 +1,18 @@
-<!DOCTYPE html><html><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listado de Arhivos</title>
-  
-  <!-- ELEMENTOS PARA QUE FUNCIONE EL JUEGO -->
-  <link rel="stylesheet" href="rex-game.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-  <script src="rex-game.js"></script>
-  <!-- mi css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-  <link rel="stylesheet" href="style.css?=<? echo time()?>">
-<style>
+<!doctype html>
+<html>
 
-.offline .runner-container{
-  top:30vh;
-}
-.arcade-mode .runner-container {
-  margin: 30vh auto auto auto !important;
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title >chrome easter egg: t-rex runner</title>
+    <link rel="stylesheet" href="rex-game.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <script src="rex-game.js"></script>
+</head>
 
-}
-
-
-  </style>
-
-</head><body>
-
-<header>
-<h2>Error 404</h2>
-<p>Algo liaste que eso no ta</p>
-
-<a href="javascript: history.go(-1)">Volver atrás</a>
-<br>
-<a href="../index.php">volver a la página de INICIO</a>
-</header>
-
-
-
-
-<main id="t" class="offline">
+<body id="t" class="offline">
     <div id="messageBox" class="sendmessage">
-         <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Presiona ESPACIO para empezar</h1>
+         <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Press Space to start</h1>
          <div class="niokbutton" onclick="okbuttonsend()"></div>
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
@@ -56,7 +29,7 @@
             </template>
         </div>
     </div>
-</main>
+</body>
 
 <script>
     document.onkeydown = function(evt) {
@@ -67,8 +40,5 @@
     }
 };
 </script>
-
-
-</body>
+    
 </html>
-
