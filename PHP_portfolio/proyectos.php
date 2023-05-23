@@ -13,7 +13,11 @@ if ($result->num_rows > 0) {
   echo '<ul class="lista">';
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo '<li><a href="proyecto/'.$row["slug"].'">'.$row["nombre"].'</a></li>';
+    echo '<li>';
+    echo '<a href="proyecto/'.$row["slug"].'">';
+    echo '<img src="img/'.$row["img"].'" alt="'.$row["nombre"].'">';
+    echo '<h3>'.$row["nombre"].'</h3>';
+    echo '</a></li>';
   }
   echo '</ul>';
 
