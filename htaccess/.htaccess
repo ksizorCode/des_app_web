@@ -1,11 +1,2 @@
-### Inicio Rewrite
-# Activa el sistema de reescritura de URL
-RewriteEngine on;
-
-RewriteRule ^inicio/?$          index.php
-RewriteRule ^login/?$           inicio-sesion.php
-RewriteRule ^registro/?$        registro-usuario.php
-
-
-
-
+# Error 404
+ErrorDocument 404 /404.php
