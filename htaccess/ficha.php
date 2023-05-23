@@ -3,6 +3,7 @@
 
 <?php
 
+
 if(isset($_GET['n'])){
     $nombre=$_GET['n'];
 }
