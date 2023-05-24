@@ -13,10 +13,10 @@
 <style>
 
 .offline .runner-container{
-  top:30vh;
+  top:40vh;
 }
 .arcade-mode .runner-container {
-  margin: 30vh auto auto auto !important;
+  margin: 5vh auto auto auto !important;
 
 }
 
@@ -26,13 +26,19 @@
 </head><body>
 
 <header>
-<h2>Error 404</h2>
-<p>Algo liaste que eso no ta</p>
-
-<a href="javascript: history.go(-1)">Volver atrás</a>
-<br>
-<a href="../index.php">volver a la página de INICIO</a>
+<h1>Uy! Algo ha fallado</h1>
+<h2>La ruta solicitada no existe (Error 404)</h2>
+<nav>
+  <ul class="migas"><li><a href="../index.php"><i class="fa-solid fa-house"></i>INICIO</a></li></ul>
+</nav>
 </header>
+
+
+<p>Pudes hacer alguna cosa de las siguientes cosas:</p>
+
+<a href="../index.php" class="btn"><i class="fa-solid fa-house"></i>Volver al INICIO</a>
+<a href="javascript: history.go(-1)" class="btn"><i class="fa-solid fa-backward"></i>Volver atrás</a>
+
 
 
 

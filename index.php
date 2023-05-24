@@ -9,7 +9,6 @@
 </head><body>
   <header>
   <h1>Mi Listado de archivos PHP</h1>
-  <a href="/PHP/8%20JSON/4.%20JSON%20Reader/JSON/datos.json" target="_blank">Ver Referencia de hoy</a>
   <nav>
   
 <?php
