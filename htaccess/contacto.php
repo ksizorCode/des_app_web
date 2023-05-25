@@ -1,4 +1,4 @@
-<?php include 'inc/header.php';?>
+<?php include '_header.php';?>
 
 
 
@@ -6,4 +6,4 @@
 <address>
     C/ Moros 45 Gijón Asturias
 </address>
-<?php include 'inc/footer.php';?>
+<?php include '_footer.php';?>

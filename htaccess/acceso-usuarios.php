@@ -1,4 +1,4 @@
-<?php include 'inc/header.php';?>
+<?php include '_header.php';?>
 
     <h1>Apartdo Servicios</h1>
-    <?php include 'inc/footer.php';?>
+    <?php include '_footer.php';?>

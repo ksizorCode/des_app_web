@@ -7,7 +7,7 @@
 RewriteEngine On
 
 # Redireccion a error 404
-ErrorDocument 404       http://desappweb.local/des_app_web/htaccess/error404
+#ErrorDocument 404       http://desappweb.local/des_app_web/htaccess/error404
 
 
 
