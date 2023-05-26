@@ -13,7 +13,21 @@
 
 //hacemos la consulta para extaer de la DDBB todos los tipos de colores que se ofren ahora mismo
 
-// SELECT * FROM coches WHERE disponible=1;
+
+
+
+//SELECT * FROM coches WHERE disponible = 1
+
+
+
+
+
+
+
+
+
+
+
 
 $modelos_color=[
   'Rosa' => 330,
