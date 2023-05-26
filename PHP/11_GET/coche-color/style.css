@@ -26,27 +26,28 @@ body{
     font-weight: bold;
     position: relative;
     background: white;
-    box-shadow: inset 2px 3px 8px grey;
+    box-shadow: inset 2px 3px 8px grey, -12px 5px 8px rgba(0,0,0,0.8);
     top: 210px;
     left: 437px;
     scale: 0.7;
+    rotate: 355deg;
     z-index: 3;
     width:80px;
     text-align:center;
     overflow:hidden;
-    transform: perspective(201px) rotateX(-12deg) rotateY(45deg);
+    transform: perspective(201px) rotateX(-12deg) rotateY(45deg) skew(-10deg, 0deg);
 }
 
 img{width:550px;}
 
 
 .coche{
-    animation: entrada 4s;
+    animation: entrada 2s;
     position:relative;
 }
 
 @keyframes entrada{
-    0%{ left:-500px; opacity:0.10; scale:0.1; filter:hue-rotate(-1200deg);) }
+    0%{ left:-250px; opacity:0; scale:0.1; filter:hue-rotate(-1200deg);) }
     100%{ left:0; filter:hue-rotate(0deg);}
     
 }

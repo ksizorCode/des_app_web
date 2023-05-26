@@ -1,6 +1,19 @@
 <?php
+if(isset($_GET['g']) && isset($_GET['m'])){
+    $grados = $_GET['g'];
+    $matricula = $_GET['m'];
+    $hayGet="en GET no había cosas:";
+}
+else{
+    $grados = 0;
+    $matricula = "0000-AAA";
+    $hayGet="en GET no había nada, se han asignado automaticamente valores iniciales:";
+}
+
+
 // CONSULTANDO LA BASE DE DATOS DE VERDAD
 function select_colores(){
+    global $grados;
   // Create connection
   $conn = new mysqli("localhost","root", "root", "concesionario");
   // Check connection
@@ -15,12 +28,17 @@ function select_colores(){
 
       // abrimos el texto HTML select
     echo '<select name="g" id="color" onchange="actualizar()">';
-    echo '<option value="$grados">-</option>';
+    //echo '<option value="0">Seleccione Color</option>';
 
     //mientras haya datos me asocias cada "fila" de datos con una iteración
     while($row = $result->fetch_assoc()) {
       //metes el texto HTML pa crear un option con lso datos de esa "pasada" o interación
-      echo '<option value="'.$row["grados"].'">'.$row["color"].'</option>';
+      echo '<option value="'.$row["grados"].'"';
+      if($row["grados"]==$grados){
+        echo "selected";
+      }
+      echo '>'.$row["color"];
+      echo '</option>';
     }
     // cerramos el texto HTML select
     echo '</select>';
@@ -32,16 +50,7 @@ function select_colores(){
   $conn->close();
 }
 
-if(isset($_GET['g']) && isset($_GET['m'])){
-    $grados = $_GET['g'];
-    $matricula = $_GET['m'];
-    $hayGet="en GET no había cosas:";
-}
-else{
-    $grados = 0;
-    $matricula = "0000-AAA";
-    $hayGet="en GET no había nada, se han asignado automaticamente valores iniciales:";
-}
+
 ?>
 
 
@@ -52,7 +61,7 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time()?>">
     <style>
     
     img{
@@ -68,26 +77,33 @@ else{
     <div>
     <h4>Traido del GET</h4>
     <p>GET?: <?php echo $hayGet;?></p>
-    <p>Grados: <?php echo $grados;?></p>
-    <p>Matrícula: <?php echo $matricula;?></p>
+    <p>$grados: <?php echo $grados;?></p>
+    <p>$matrícula: <?php echo $matricula;?></p>
 </div>
 <div>
     <h3>Hora mismo</h3>
+    <p>Valor actual de la URL:<span id="vurl"></span></p>
     <p>Valor actual de Grados:<span id="vgrados"></span></p>
     <p>Valor actual de Matrícula:<span id="vmatricula"></span></p>
-    <p>Valor actual de la URL:<span id="vurl"></span></p>
     </div>
 </div>
 
 <h1>De qué color quieres tu coche</h1>
 
 <form action="" method="get">
+    <label for="modelo">Modelo</label>
+    <select name="modelo" id="modelo" onchange="actualizar()">
+        <option value="coche2.jpg">Infinity</option>
+        <option value="coche4.jpg">Mini Cooper</option>
+        <option value="coche3.jpg">Opel</option>
+    </select>
+
     <label for="color">Seleccione color</label>
-    <?php select_colores(); ?>
+    <?php select_colores(); ?><br>
 
     <label for="matricula">Matricula</label>
-    <input type="text" id="matricula" name="m" onchange="actualizar()" value="<?php echo $matricula ?>">
-
+    <input type="text" id="matricula" name="m" onkeyup="actualizar()" value="<?php echo $matricula ?>">
+    <br>
     <!-- <input type="submit" value="Dame mi coche"> -->
     <input type="button" onclick="actualizar()" value="Actualizar">
 </form>
@@ -101,11 +117,18 @@ else{
 <script>
     let nummatricula="<?php echo $matricula ?>";
     let gradosColor=<?php echo $grados ?>;
+    let modelo="coche2.jpg";
 
     function actualizar(){
     // cargar matrícula
     nummatricula = document.getElementById('matricula').value;
     document.getElementById('mimatricula').innerHTML=nummatricula;
+
+
+    // cargar modelo de coche
+    mimodelo = document.getElementById('modelo').value;
+    document.getElementById('miCoche').src="img/"+mimodelo;
+    //alert(mimodelo);
     
     // cargar tono del coche
     gradosColor = document.getElementById('color').value;
