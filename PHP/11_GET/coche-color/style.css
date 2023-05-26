@@ -38,3 +38,15 @@ body{
 }
 
 img{width:550px;}
+
+
+.coche{
+    animation: entrada 4s;
+    position:relative;
+}
+
+@keyframes entrada{
+    0%{ left:-500px; opacity:0.10; scale:0.1; filter:hue-rotate(-1200deg);) }
+    100%{ left:0; filter:hue-rotate(0deg);}
+    
+}

@@ -15,6 +15,8 @@ function select_colores(){
 
       // abrimos el texto HTML select
     echo '<select name="g" id="color" onchange="actualizar()">';
+    echo '<option value="$grados">-</option>';
+
     //mientras haya datos me asocias cada "fila" de datos con una iteración
     while($row = $result->fetch_assoc()) {
       //metes el texto HTML pa crear un option con lso datos de esa "pasada" o interación
@@ -91,9 +93,10 @@ else{
 </form>
     
 <a href="#" id="urlGET">Generar URL</a>
+<div class="coche">
 <p id="mimatricula">Porfavor inserte matrícula</p>
 <img src="img/coche2.jpg" id="miCoche">
-
+</div>
 
 <script>
     let nummatricula="<?php echo $matricula ?>";
