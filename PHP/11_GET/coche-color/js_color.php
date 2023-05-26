@@ -88,8 +88,8 @@ else{
 
 
 <script>
-    let nummatricula=<?php echo $matricula ?>";
-    let gradosColor=<?php echo $grados ?>>;
+    let nummatricula=<?php echo $matricula ?>;
+    let gradosColor=<?php echo $grados ?>;
 
     function actualizar(){
     // cargar matrícula
