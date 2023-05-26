@@ -14,7 +14,7 @@ function select_colores(){
   if ($result->num_rows > 0) {
 
       // abrimos el texto HTML select
-    echo '<select name="g" id="color">';
+    echo '<select name="g" id="color" onchange="actualizar()">';
     //mientras haya datos me asocias cada "fila" de datos con una iteración
     while($row = $result->fetch_assoc()) {
       //metes el texto HTML pa crear un option con lso datos de esa "pasada" o interación
@@ -30,19 +30,16 @@ function select_colores(){
   $conn->close();
 }
 
-
-
-
-if(isset($_GET['c']) & isset($_GET['m'])){
-    $grados = $_GET['c'];
+if(isset($_GET['g']) && isset($_GET['m'])){
+    $grados = $_GET['g'];
     $matricula = $_GET['m'];
+    $hayGet="en GET no había cosas:";
 }
 else{
-    $grados =0;
-    $matricula = "Porfavor Inserte Matrícula";
+    $grados = 0;
+    $matricula = "0000-AAA";
+    $hayGet="en GET no había nada, se han asignado automaticamente valores iniciales:";
 }
-
-
 ?>
 
 
@@ -53,42 +50,53 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-    *{
-        margin:0;
-        padding:0;
-    }
-
-    body{
-        font-family:system-ui, sans-serif;
-    }
+    
     img{
-        width:100%;
         filter: hue-rotate(<?php echo $grados ?>deg);
     }
     </style>
 </head>
 <body>
 
+
+
+<div class="chivato">
+    <div>
+    <h4>Traido del GET</h4>
+    <p>GET?: <?php echo $hayGet;?></p>
+    <p>Grados: <?php echo $grados;?></p>
+    <p>Matrícula: <?php echo $matricula;?></p>
+</div>
+<div>
+    <h3>Hora mismo</h3>
+    <p>Valor actual de Grados:<span id="vgrados"></span></p>
+    <p>Valor actual de Matrícula:<span id="vmatricula"></span></p>
+    <p>Valor actual de la URL:<span id="vurl"></span></p>
+    </div>
+</div>
+
 <h1>De qué color quieres tu coche</h1>
+
 <form action="" method="get">
     <label for="color">Seleccione color</label>
     <?php select_colores(); ?>
 
-    <label for="matricula">Insrte Numero Matricula</label>
-    <input type="text" id="matricula" name="matricula" onchange="actualizar()">
+    <label for="matricula">Matricula</label>
+    <input type="text" id="matricula" name="m" onchange="actualizar()" value="<?php echo $matricula ?>">
 
     <!-- <input type="submit" value="Dame mi coche"> -->
     <input type="button" onclick="actualizar()" value="Actualizar">
 </form>
     
-<p id="mimatricula">Porfavor inserte matrícula</p>
 <a href="#" id="urlGET">Generar URL</a>
+<p id="mimatricula">Porfavor inserte matrícula</p>
 <img src="img/coche2.jpg" id="miCoche">
 
 
 <script>
-    let nummatricula=<?php echo $matricula ?>;
+    let nummatricula="<?php echo $matricula ?>";
     let gradosColor=<?php echo $grados ?>;
 
     function actualizar(){
@@ -104,8 +112,19 @@ else{
     // Generar URL con GET via JS
     let miURL='js_color.php?g='+gradosColor+'&m='+nummatricula;
     document.getElementById('urlGET').href=miURL;
+    document.getElementById('urlGET').innerText=miURL;
+
+    // Enviar a Chivato
+    document.getElementById('vmatricula').innerText=nummatricula;
+    document.getElementById('vgrados').innerText=gradosColor;
+    document.getElementById('vurl').innerText=miURL;
+
 
     }
+
+
+actualizar();
+    
 
 </script>
 </body>

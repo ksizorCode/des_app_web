@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:system-ui, sans-serif;
+    max-width:960px;
+    margin: 8px auto;
+}
+
+.chivato{
+    padding:10px;
+    border-radius: 20px;
+    border: solid tan;
+    color:tan;
+    display: flex;
+}
+
+#mimatricula{
+    padding: 3px;
+    border:solid 2px black;
+    border-radius:4px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    background: white;
+    box-shadow: inset 2px 3px 8px grey;
+    top: 210px;
+    left: 437px;
+    scale: 0.7;
+    z-index: 3;
+    width:80px;
+    text-align:center;
+    overflow:hidden;
+    transform: perspective(201px) rotateX(-12deg) rotateY(45deg);
+}
+
+img{width:550px;}
