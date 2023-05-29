@@ -1,9 +1,7 @@
 <?php
 
-
 $miusuario ="miguel";
 $mipassword="admin";
-
 
 
 // Chequea si la sesión se ha iniciado.

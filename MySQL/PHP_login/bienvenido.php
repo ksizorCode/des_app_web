@@ -8,24 +8,28 @@ if(isset($_POST['usuario']) && isset($_POST['pass'])){
     $POSTpass = $_POST['pass'];
 }
 
-
-// Abrir sistema de sesiones
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-$_SESSION['nombre'] = 'miguel';
-$_SESSION['rol'] = 'admin';
-// a partir de aquí la sesión está abierta.
-
 //Chequeo de contraseña
 if(($POSTnombre == $miusuario) && ($POSTpass == $mipassword)){
     echo "<p>Usario y contraseña correctos</p>";
-    echo "<h1>Bienvenido ".$_SESSION['nombre']."</h1>";
+    echo "<h1>Bienvenido ".$miusuario."</h1>";
+
+    // SI LA CONTRASEÑA ES CORRECTA, INCIA LA SESION con usuario miguel y rol admin
+    // Abrir sistema de sesiones
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $_SESSION['nombre'] = $miusuario;
+    $_SESSION['rol'] = 'admin';
+    // a partir de aquí la sesión está abierta.
+
+
+
 }
+// Si la contraseña no es correcta
 else{
     //echo "Contraseña Incorrecta";
-    header('Location: login.php?m=458');
+    header('Location: login.php?m');
 }
 /*
 echo "<br>";

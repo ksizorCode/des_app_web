@@ -2,7 +2,8 @@
 <? include '_header.php'; ?>
 
 
-<?php if(isset($_GET['m'])){ echo "<h1>Contraseña Incorrecta</h1>";} else{ echo '<h1>Inicio de Sesión</h1>';}?>
+<?php if(isset($_GET['m'])){ echo "<h1>Contraseña Incorrecta</h1>";}
+else{ echo '<h1>Inicio de Sesión</h1>';}?>
 
 <form action="bienvenido.php" method="post">
     <label for="usuario">Usuario:</label>
