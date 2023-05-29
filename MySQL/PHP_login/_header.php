@@ -19,9 +19,25 @@
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="privado.php">Privado</a></li>
-                <li><a href="login.php">Login</a></li>
+                <?php
+                // abrimos el sistema de sesiones
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
+
+                if (isset($_SESSION['rol']) &&  $_SESSION['rol']== 'admin') { ?>
+                    <li><a href="privado.php">Privado</a></li>
+                <?php } ?>
                 <li><a href="contacto.php">Contacto</a></li>
+                
+                <?php
+                if (isset($_SESSION['rol']) &&  $_SESSION['rol']== 'admin') { ?>
+                    <li><a href="cerrarsesion.php">Cerrar Sesión</a></li>
+                    <? } 
+                else{?>
+                    <li><a href="login.php">Iniciar Sesión</a></li>
+
+                <?      } ?>
             </ul>
         </nav>
     </header>
