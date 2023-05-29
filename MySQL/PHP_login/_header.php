@@ -1,4 +1,12 @@
 <?php
+// Chequea si la sesión se ha iniciado.
+// Si se ha iniciado. Si no se ha iniciao se inicia y si se ha iniciado ya no se inicia
+function chekSesiones(){
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+}
+
 
 
 
@@ -21,9 +29,7 @@
                 <li><a href="index.php">Inicio</a></li>
                 <?php
                 // abrimos el sistema de sesiones
-                if (session_status() === PHP_SESSION_NONE) {
-                    session_start();
-                }
+                chekSesiones();
 
                 if (isset($_SESSION['rol']) &&  $_SESSION['rol']== 'admin') { ?>
                     <li><a href="privado.php">Privado</a></li>

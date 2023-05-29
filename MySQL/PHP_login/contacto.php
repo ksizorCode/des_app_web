@@ -4,9 +4,7 @@
 
 
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+chekSesiones();
 //$_SESSION['rol'] = 'admin';
 
 // Comprobamos si es admin

@@ -3,9 +3,7 @@
 <?php
 
 // Creamos la variable en algún momento
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+chekSesiones();
 
 // Comprobamos si existe con isset()
 if (isset($_SESSION['nombre'])) {
