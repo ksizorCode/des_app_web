@@ -6,7 +6,7 @@
 session_start();
 
 // Comprobamos si existe con isset()
-if (isset($_SESSION['nombre'])) {
+if (isset($_SESSION['nombre']) && $_SESSION['rol']=="admin") {
     // Si esta identificado, en otras palabras existe la variable, le saludamos
     
     echo 'Hola ' . $_SESSION['nombre'];
