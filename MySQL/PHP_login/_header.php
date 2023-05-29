@@ -1,4 +1,11 @@
 <?php
+
+
+$miusuario ="miguel";
+$mipassword="admin";
+
+
+
 // Chequea si la sesión se ha iniciado.
 // Si se ha iniciado. Si no se ha iniciao se inicia y si se ha iniciado ya no se inicia
 function chekSesiones(){
@@ -19,7 +26,7 @@ function chekSesiones(){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time();?>">
 </head>
 <body>
     <header>

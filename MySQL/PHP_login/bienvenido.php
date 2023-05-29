@@ -1,15 +1,48 @@
 
 <?php
-// Login abiero
+ include '_header.php'; 
+
+// Recibir desde el formulario via POST:
+if(isset($_POST['usuario']) && isset($_POST['pass'])){
+    $POSTnombre = $_POST['usuario'];
+    $POSTpass = $_POST['pass'];
+}
+
+
+// Abrir sistema de sesiones
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
 $_SESSION['nombre'] = 'miguel';
 $_SESSION['rol'] = 'admin';
 // a partir de aquí la sesión está abierta.
 
+//Chequeo de contraseña
+if(($POSTnombre == $miusuario) && ($POSTpass == $mipassword)){
+    echo "<p>Usario y contraseña correctos</p>";
+    echo "<h1>Bienvenido ".$_SESSION['nombre']."</h1>";
+}
+else{
+    //echo "Contraseña Incorrecta";
+    header('Location: login.php?m=458');
+}
+/*
+echo "<br>";
+echo "$POSTnombre:".$POSTnombre;
+echo "<br>";
+echo "$POSTpass:".$POSTpass;
+echo "<br>";
+echo "miusuario:".$miusuario;
+echo "<br>";
+echo "$mipassword:".$mipassword;
+echo "<br>";
+*/
 
- include '_header.php'; 
+
+
+
+
 
 
 // Comprobamos si existe con isset()
