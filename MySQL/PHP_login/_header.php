@@ -2,6 +2,8 @@
 
 $miusuario ="miguel";
 $mipassword="admin";
+$miemail="info@miguelesteban.net";
+$mirol="admin";
 
 
 // Chequea si la sesión se ha iniciado.

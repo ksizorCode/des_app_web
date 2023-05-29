@@ -15,6 +15,7 @@ else{ echo '<h1>Inicio de Sesión</h1>';}?>
     <input type="submit" value="acceder"><br>
     <input type="button" value="Ver Contraseña" onclick="myFunction()">
 </form>
+<a href="lostpass.php">Olvidé mi contraseña</a>
 
 <script>
 function myFunction() {
