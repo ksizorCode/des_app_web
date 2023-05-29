@@ -7,7 +7,7 @@
 session_start();
 
 // Comprobamos si existe con isset()
-if (isset($_SESSION['nombre']=="admin")) {
+if (isset($_SESSION['nombre'])) {
     // Si esta identificado, en otras palabras existe la variable, le saludamos
     echo 'Hola ' . $_SESSION['nombre'];
     echo '<p>Puedes acceder al área privada aquí: <a href="privado.php">Priadisimo</a></p>';
