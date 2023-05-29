@@ -1,7 +1,7 @@
 <?php
-
-$miusuario ="miguel";
-$mipassword="admin";
+// simulación de datos de la tabla Usuarios
+$miusuario ="fran";
+$mipassword="12345";
 $miemail="info@miguelesteban.net";
 $mirol="admin";
 

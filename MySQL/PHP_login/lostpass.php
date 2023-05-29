@@ -11,8 +11,6 @@ if(isset($_GET['email'])){
     <p>Revisa la bandeja de entrada de tu correo (también el apartado span si no lo encuentras). El Remitente debería ser micorreo@ejemplo.com.</p>';
   
     
-
-
     //Envio de email:
     $to = $email;
     $subject = "Reseteo de de Contraseña";
@@ -47,8 +45,6 @@ if(isset($_GET['email'])){
     $headers .= 'Cc: myboss@example.com' . "\r\n";
 
     mail($to,$subject,$message,$headers);
-
-
 
 
   
