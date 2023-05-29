@@ -1,8 +1,3 @@
-<?php
-session_start();
-$_SESSION['usuario'] = 'admin';
-$_SESSION['rol'] = 'admin';
-?>
 
 <? include '_header.php'; ?>
 <h1>Inicio de Sesión</h1>
