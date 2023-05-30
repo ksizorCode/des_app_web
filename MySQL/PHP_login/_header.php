@@ -3,7 +3,7 @@
 $miusuario ="fran";
 $mipassword="12345";
 $miemail="info@miguelesteban.net";
-$mirol="admin";
+$mirol="trabajador";
 
 
 // Chequea si la sesión se ha iniciado.

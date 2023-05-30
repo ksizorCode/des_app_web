@@ -20,7 +20,7 @@ if(($POSTnombre == $miusuario) && ($POSTpass == $mipassword)){
     }
 
     $_SESSION['nombre'] = $miusuario;
-    $_SESSION['rol'] = 'admin';
+    $_SESSION['rol'] = $mirol;
     // a partir de aquí la sesión está abierta.
 
 
