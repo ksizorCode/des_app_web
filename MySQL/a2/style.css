@@ -1,0 +1,29 @@
+body {
+    max-width: 560px;
+    margin: 20px auto;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+
+
+/*
+*{
+    border: solid red 1px;
+}
+*/
