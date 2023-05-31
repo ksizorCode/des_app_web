@@ -3,7 +3,25 @@
 $miusuario ="fran";
 $mipassword="12345";
 $miemail="info@miguelesteban.net";
+// $mirol="admin";
 $mirol="trabajador";
+
+// Datos de la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "miweb";
+
+// Abrir conexión con la base de datos
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Comprobar que la conexión
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+
+
+
 
 
 // Chequea si la sesión se ha iniciado.
@@ -40,6 +58,7 @@ function chekSesiones(){
 
                 if (isset($_SESSION['rol']) &&  $_SESSION['rol']== 'admin') { ?>
                     <li><a href="privado.php">Privado</a></li>
+                    <li><a href="usuarios.php">Usuarios</a></li>
                 <?php } ?>
                 <li><a href="contacto.php">Contacto</a></li>
                 

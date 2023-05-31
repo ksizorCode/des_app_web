@@ -1,12 +1,45 @@
-
 <?php
- include '_header.php'; 
+include '_header.php'; 
 
 // Recibir desde el formulario via POST:
 if(isset($_POST['usuario']) && isset($_POST['pass'])){
     $POSTnombre = $_POST['usuario'];
     $POSTpass = $_POST['pass'];
+
+    //Realizar consulta a la base de datos
+    $sql = "SELECT * FROM usuarios WHERE usuario='$POSTnombre' AND password='$POSTpass'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+           $miusuario = $row["usuario"];
+           $mipassword = $row["password"];
+           $miemail = $row["email"];
+           $mirol = $row["rol"];
+        }
+      } else {
+        echo "No se han encontrado resultados";
+      }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Chequeo de contraseña
 if(($POSTnombre == $miusuario) && ($POSTpass == $mipassword)){
