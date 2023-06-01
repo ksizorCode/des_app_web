@@ -8,6 +8,9 @@ if(isset($_POST['usuario']) && isset($_POST['password'])){
     $mipassword= $_POST['password'];
 
     //hechamos un vistazo a la BBDD
+    
+    //abrir conexión (tengo una función pa esto en config.php)
+    abrirDB();
 
     $sql ="SELECT usuario, pass, rol FROM usuarios WHERE usuario ='$miusuario' AND pass='$mipassword'";
     $result = $conn->query($sql);

@@ -17,6 +17,12 @@
 
 
 <?php
+
+
+//abrir conexión (tengo una función pa esto en config.php)
+abrirDB();
+
+
 //Consulta
 $sql = "SELECT * FROM usuarios";
 $result = $conn->query($sql);

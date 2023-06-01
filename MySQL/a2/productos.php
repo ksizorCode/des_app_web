@@ -19,6 +19,9 @@
     </style>
 
 <?php
+//abrir conexión (tengo una función pa esto en config.php)
+abrirDB();
+
 //Consulta
 $sql = "SELECT * FROM articulos";
 $result = $conn->query($sql);
@@ -60,8 +63,8 @@ if ($result->num_rows > 0) {
     
     if(isset($_SESSION['admin'])){
     echo '<td>'.$row["stock"].'</td>';
-    echo '<td><a href="edit.php?id=$row["id"]">Modificar</a></td>';
-    echo '<td><a href="borrar.php?id=$row["id"]">Borrar</a></td>';
+    echo '<td><a href="edit.php?id='.$row["id"].'">Modificar</a></td>';
+    echo '<td><a href="borrar.php?id='.$row["id"].'">Borrar</a></td>';
     }
 
     echo '</tr>';
@@ -75,7 +78,7 @@ if ($result->num_rows > 0) {
 
 if(isset($_SESSION['admin'])){
     echo '<br><br><br>';
-    echo '<a href="add.php">Añadir Producto Friky Papi</a>';
+    echo '<a href="add.php" class="btn">Añadir Producto</a>';
 }
 
 ?>

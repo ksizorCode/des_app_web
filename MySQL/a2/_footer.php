@@ -7,7 +7,13 @@
 
 <?php
 //Cerrar Conexión
-$conn->close();
+if($connAbierta){
+    $conn->close();
+    echo "<p>La conexión se ha cerrado (porque taba abierta)</p>";
+}
+else{
+    echo "<p>La conexión ni se abrió ni se cerró</p>";
+}
 ?>
 
 <?//echo 'footer.php'?>

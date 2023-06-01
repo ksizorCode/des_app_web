@@ -20,20 +20,26 @@ $miTitulo = $miTituloWeb;
 
 //echo 'config.php';
 
+$connAbierta=false;
 
+function abrirDB(){
+    global $connAbierta;
+    global $conn;
+    //Base de Datos
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "bebeland";
 
+    // Crear conexión
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Verificar conexión
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    }
 
-//Base de Datos
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bebeland";
+    $connAbierta=true;
 
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Verificar conexión
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
 }
 
 
