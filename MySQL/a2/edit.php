@@ -4,7 +4,7 @@
 <? include '_header.php'?>
 
 <?php
-
+    //PASO 1. Obtener id que llega del GET
     if(isset($_GET['id'])){
         $id=$_GET['id'];
     }
@@ -18,14 +18,16 @@
         ['slug',        'text',     'Texto para URL:']
     ];
 
+    //PASO 2. Consultar los datos que quiero mostrar de la DB.
+    //Voy a construir esa consulta a partir del array
 
-    //Cargar datos de la DB
+    //Abrir DB
     abrirDB();
 
     //creo un array temporalmente donde almacenaré el primer elemento del array elementos
-      $lista = array();
+    $lista = array();
 
-      foreach ($elementos as $elemento) {
+    foreach ($elementos as $elemento) {
           $lista[] = $elemento[0];
       }
       
@@ -42,7 +44,7 @@
     // echo '<br>';;
     // echo '<pre>';
 
-    //Almacenamos loa datos obtenidos en la DB
+    //Almacenamos los datos obtenidos en la DB
     $listilla=[];
 
     if ($result->num_rows > 0) {
@@ -57,10 +59,10 @@
 
    //print_r($listilla);
 
+
+   //PASO 4. Construcción de formulario con campos ya rellenos
 ?>
-
 <form action="add_checker.php" method="POST">
-
 <?
     $i=0;
     foreach($elementos as $elemento){       
