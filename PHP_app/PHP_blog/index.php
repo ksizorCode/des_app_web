@@ -62,7 +62,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
+http://wp.local/
 
 
 $sql = "SELECT * FROM articulos LIMIT $resultados OFFSET $pagina";
