@@ -81,7 +81,7 @@ function menuBuilder(){
 
 
 
-    echo '<ul class="menu">';
+    echo '<ul class="menu">\n';
     foreach($miMenu as $e){
         echo '<li>';
         echo '<a href="'.$e[1].'" class="'.$e[4].'" ';
@@ -91,10 +91,10 @@ function menuBuilder(){
         }
 
         echo '>'.$e[0].'</a>';
-        echo '</li>';
+        echo '</li>\n';
 
     }
-    echo '</ul>';
+    echo '</ul>\n';
 
 }
 
