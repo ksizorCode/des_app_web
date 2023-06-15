@@ -1,10 +1,20 @@
 <?php require 'config.php'?>
+<?php $miTituloApartado="Inicio"; ?>
+<?php obtener_cabecera(); ?>
 
-<? obtener_cabecera(); ?>
-<h1>Soy el index de una web</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis aliquid consequuntur corrupti. Obcaecati, magnam sit id adipisci odio, eligendi earum praesentium molestiae provident architecto, sed nisi eaque reprehenderit quae.</p>
-<h2>Aquí el contenido de la web</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, aperiam necessitatibus? Dolores, enim. Labore, cum atque ullam repudiandae quaerat accusamus expedita nisi. Natus minima iste est quidem quibusdam voluptas voluptatibus.</p>
+<h1>Bienvenidos al ejemplo de Modelo Vista Controlador.</h1>
+<h2>Instalación</h2>
+<p>Para que todo funcione correctamente accede al archivo <strong>config.php</strong> y cambia la ruta de la variable miURL de tal manera que coincida con la dirección a la ruta actual.</p>
+<p>Es decir: básicamente copia la ruta URL de la barra de direcciones y pégala para que se vea de la siguiente manera</p>
+<pre>
+    <code>
+$miTheme ="augustheme"; // Aquí el nombre del tema a utilizar
+$miURL="http://desappweb.local/des_app_web/MVC/"; //Ruta URL
+$miTitulo="Otra cosa"; // título de la web
+
+</code>
+</pre>
+<p>A partir de aquí es un ejemplo de texto, imágen, etc.</p>
 <img src="img/001.jpg" alt="">
 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, repudiandae expedita? Nulla possimus quis pariatur! Inventore illum, adipisci provident nisi esse ipsa eos, tempore incidunt laborum officiis amet porro cupiditate.</p>
 <? obtener_pie(); ?>

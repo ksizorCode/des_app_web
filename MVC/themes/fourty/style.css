@@ -1,7 +1,14 @@
+:root{
+    --c:coral;
+    --ff:monospace;
+}
+
 body{
-    font-family: sans-serif;
-    background: coral;
+    font-family: var(--ff);
+    background: var(--c);
     max-width:650px;
+    min-width: 320px;
+    margin-inline: auto;
     padding: 20px;
 }
 
@@ -17,6 +24,7 @@ header nav ul{
     padding-left:0 ;
     display: flex;
     gap:10px;
+    flex-wrap: wrap;
 }
 img{
     max-width:100%;
@@ -26,14 +34,27 @@ img{
 
 a{
     text-decoration: none;
+    color:var(--c)
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 
 #countDown{
     text-align: center;
-    background: coral;
+    background: var(--c);
     color:white;
     padding: 20px;
     border-radius: 20px;
 
+}
+
+
+pre{
+    background:#EEE;
+    padding:20px;
+    border-radius:20px;
+    border: solid #888 1px;
 }
