@@ -1,6 +1,6 @@
 <?php
 
-/*
+/*  Themes activos ahora mismo:
     Tema 1: fourty
     Tema 2: augustheme
 
