@@ -86,7 +86,7 @@ function menuBuilder(){
         echo '<li>';
         echo '<a href="'.$e[1].'" class="'.$e[4].'" ';
 
-        if($e){
+        if($e[2]){
             echo 'target="_blank" ';
         }
 
