@@ -51,6 +51,23 @@ a:hover{
 
 }
 
+button, .btn{
+    text-align: center;
+    color:white;
+    padding: 10px;
+    border-radius: 20px;
+    background:none;
+    border: var(--c) 1px solid;
+    color: var(--c);
+}
+
+button:hover, .btn:hover{
+    background: var(--c);
+    color:white;
+
+}
+
+
 
 pre{
     background:#EEE;
