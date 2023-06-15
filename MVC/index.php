@@ -33,6 +33,8 @@ $miTitulo="Otra cosa"; // título de la web
 <p>Párrafo a con su lorem ipsum dolor bla bla bla</p>
 
 <button>Ejemplo de botón</button>
+<button>Ejemplo de botón</button>
+<button class="selected">Ejemplo de botón</button>
 
 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, repudiandae expedita? Nulla possimus quis pariatur! Inventore illum, adipisci provident nisi esse ipsa eos, tempore incidunt laborum officiis amet porro cupiditate.</p>
 <? obtener_pie(); ?>
