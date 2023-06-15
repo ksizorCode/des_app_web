@@ -79,10 +79,18 @@ function apartadoyTitulo(){
 function menuBuilder(){
     global $miMenu;
 
+
+
     echo '<ul class="menu">';
     foreach($miMenu as $e){
         echo '<li>';
-        echo '<a href="'.$e[1].'" class="'.$e[4].'">'.$e[0].'</a>';
+        echo '<a href="'.$e[1].'" class="'.$e[4].'" ';
+
+        if($e){
+            echo 'target="_blank" ';
+        }
+
+        echo '>'.$e[0].'</a>';
         echo '</li>';
 
     }
