@@ -6,14 +6,15 @@
 
 */
 
-$lang ="es-ES";
-$miTheme ="fourty";
-$miURL="http://desappweb.local/des_app_web/MVC";
-$miTitulo="Mi Página Web";
-$separador="|";
-$miColor="tan";
-$miFuente="Arial, sans-serif";
+$lang ="es-ES";         // Define el idioma para el HTML lang
+$miTheme ="fourty";     // Define el theme a utilizar
+$miURL="http://desappweb.local/des_app_web/MVC";    // Ruta Global
+$miTitulo="Mi Página Web";              // Título del site
+$separador="|";                         // Separador para titulo de apartado | web
+$miColor="tan";                         // Color principal.
+$miFuente="Arial, sans-serif";          // Tipografía principal.
 
+// Elementos del menú de la web..
 $miMenu = [
     ['Inicio','index.php','0','Página de Inicio','ini'],
     ['Servicios','servicios.php','0','Página de Inicio','ser'],
@@ -24,9 +25,10 @@ $miMenu = [
 
 
 
-/* * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * FUNCIONES * * * * * * * * * * */
 
 // esto en wp se llama get_header();
+// hace un include del header
 function obtener_cabecera(){
     global $miTheme;
 
@@ -35,7 +37,7 @@ function obtener_cabecera(){
 }
 
 // esto en wp se llama get_footer();
-
+// hace un include del footer
 function obtener_pie(){
     global $miURL;
     global $miTheme;
@@ -44,13 +46,13 @@ function obtener_pie(){
     include $elemento;
 }
 
-
+//escribe el título del site
 function el_titulo(){
     global $miTitulo;
     echo $miTitulo;
 }
 
-
+//escribe la ruta del css
 function ruta_a_theme(){
     global $miTheme;
 
@@ -96,14 +98,16 @@ function mainColor(){
     echo "<style>:root{--c:".$miColor."; --ff:".$miFuente.";}</style>";
 }
 
+//lanzar función al final de la etiqueta <head>
 function finHead(){
 mainColor();
 }
 
-
+//lanzar función al final de la etiqueta <footer>
 function finFooter(){
 }
 
+//Carga idioma en la etiqueta lang del HTML
 function lang(){
     global $lang;
     echo $lang;
