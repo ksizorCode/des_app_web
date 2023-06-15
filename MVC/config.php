@@ -39,7 +39,7 @@ function obtener_cabecera(){
 // esto en wp se llama get_footer();
 // hace un include del footer
 function obtener_pie(){
-    global $miURL;
+    // global $miURL;
     global $miTheme;
 
     $elemento ='themes/'.$miTheme.'/footer.php'; 
@@ -52,7 +52,7 @@ function el_titulo(){
     echo $miTitulo;
 }
 
-//escribe la ruta del css
+//escribe la ruta a la carpeta del theme (tema)
 function ruta_a_theme(){
     global $miTheme;
 
