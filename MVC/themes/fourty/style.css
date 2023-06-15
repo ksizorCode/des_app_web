@@ -61,7 +61,8 @@ button, .btn{
     color: var(--c);
 }
 
-button:hover, .btn:hover{
+button:hover, .btn:hover,
+button.selected, .btn.selected{
     background: var(--c);
     color:white;
 
