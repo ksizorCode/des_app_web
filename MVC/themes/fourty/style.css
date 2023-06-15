@@ -65,7 +65,19 @@ button:hover, .btn:hover,
 button.selected, .btn.selected{
     background: var(--c);
     color:white;
+    cursor:pointer;
 
+}
+
+button.unactive, button.disable,
+.btn.unactive, .btn.disable,
+button.unactive:hover, button.disable:hover,
+.btn.unactive:hover, .btn.disable:hover{
+    cursor:not-allowed;
+    color:grey;
+    border: grey solid 1px;
+    background: none;
+    opacity:0.6;
 }
 
 

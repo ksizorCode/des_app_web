@@ -2,7 +2,7 @@
 
 </main>
 <footer>
-    <p>&copy; Copyright 2023 - <? el_titulo(); ?></p>
+    <p>&copy; Copyright 2023 - <a href="index.php"><? el_titulo(); ?></a></p>
     <p>Fourty Theme, developed by Miguel Esteban el cuarentón</p>
 </footer>
 
