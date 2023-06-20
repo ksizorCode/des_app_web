@@ -56,7 +56,7 @@ echo $contenidoICS;
 }
 //lanzar archivo .ics
 construirICS(0);
-construirICS(1);
+//construirICS(1);
 
 // Encabezados para descargar el archivo
 header('Content-Type: text/calendar; charset=utf-8');
