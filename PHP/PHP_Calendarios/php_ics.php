@@ -6,28 +6,56 @@ $nombreEvento='Noche de San Juan';
 $descripcionEvento ='Hoguera de la noche más corta del año y dazas trivales en torno a una fogata.';
 $lugarEvento="Playa de poniente";
 
+//Listado de fiestas de Gijón
+$eventos=[
+    [
+    'titulo'=>     'Noche de San Juan',
+    'inicio'=>      '2023-06-23 23:59:00',
+    'fin'=>         '2023-06-24 03:00:00',
+    'descripcion'=> 'Noche más corta del año con hoguera',
+    'lugar'=>       'Playa de Poniente, Gijón'
+    ],
+    [
+    'titulo'=>     'Fiestas de Begoña',
+    'inicio'=>      '2023-06-23 23:59:00',
+    'fin'=>         '2023-06-24 03:00:00',
+    'descripcion'=> 'Noche más corta del año con hoguera',
+    'lugar'=>       'Playa de Poniente'
+    ]
+];
+
 // Función para formatear la fecha y hora en el formato requerido por el archivo ICS
 function formatearFecha($fecha) {
     return date('Ymd\THis', strtotime($fecha));
 }
 
-// Generar contenido del archivo ICS
+function construirICS($valor){
+ global $eventos;
+
+// Generar contenido del archivo .ICS
 $contenidoICS = "BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Your Company//NONSGML Event//ES
+PRODID:-//Dicampus//CalendarGenerator//ES
 BEGIN:VEVENT
-DTSTART:" .formatearFecha($fechaInicio)."
-DTEND:" .formatearFecha($fechaFin)."
-SUMMARY: $nombreEvento
-DESCRIPTION: $descripcionEvento
-LOCATION: $lugarEvento
+DTSTART:" .formatearFecha($eventos[$valor]['inicio'])."
+DTEND:" .formatearFecha($eventos[$valor]['fin'])."
+SUMMARY:". $eventos[$valor]['titulo']."
+DESCRIPTION: ".$eventos[$valor]['descripcion']."
+LOCATION: ".$eventos[$valor]['lugar']."
 END:VEVENT
-END:VCALENDAR";
+END:VCALENDAR
+";
+
+
+// Imprimir el contenido del archivo .ICS
+echo $contenidoICS;
+
+}
+//lanzar archivo .ics
+construirICS(0);
+construirICS(1);
 
 // Encabezados para descargar el archivo
 header('Content-Type: text/calendar; charset=utf-8');
 header('Content-Disposition: attachment; filename=evento555.ics');
-
-// Imprimir el contenido del archivo ICS
-echo $contenidoICS;
 ?>
