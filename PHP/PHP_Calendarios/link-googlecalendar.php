@@ -2,11 +2,11 @@
 
 <?php
 // Detalles del evento
-$tituloEvento = 'Mi evento';
-$descripcionEvento = 'Descripción del evento';
-$ubicacionEvento = 'Lugar del evento';
-$fechaInicio = '2023-06-20T10:00:00';
-$fechaFin = '2023-06-20T12:00:00';
+$tituloEvento = 'Mi evento Ejemplo 001';
+$descripcionEvento = 'Descripción del evento aquí';
+$ubicacionEvento = 'Gijón';
+$fechaInicio = '20230620T100000';
+$fechaFin = '20230620T120000';
 
 // Codificar los detalles del evento para incluirlos en la URL
 $tituloCodificado = urlencode($tituloEvento);
@@ -19,5 +19,8 @@ $fechaFinCodificada = urlencode($fechaFin);
 $urlGoogleCalendar = "https://calendar.google.com/calendar/render?action=TEMPLATE&text={$tituloCodificado}&details={$descripcionCodificada}&location={$ubicacionCodificada}&dates={$fechaInicioCodificada}/{$fechaFinCodificada}";
 
 // Imprimir la URL de Google Calendar
-echo $urlGoogleCalendar;
+echo "<a href='$urlGoogleCalendar' target='_blank'>Añadir a Google Calendar</a>";
+
+//header("Location:$urlGoogleCalendar");
+
 ?>
