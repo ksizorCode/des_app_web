@@ -26,7 +26,7 @@ END:VCALENDAR";
 
 // Encabezados para descargar el archivo
 header('Content-Type: text/calendar; charset=utf-8');
-header('Content-Disposition: attachment; filename=evento.ics');
+header('Content-Disposition: attachment; filename=evento555.ics');
 
 // Imprimir el contenido del archivo ICS
 echo $contenidoICS;
