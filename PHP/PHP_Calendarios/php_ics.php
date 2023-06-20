@@ -1,10 +1,11 @@
 <?php
-// Fecha de inicio y fin del evento
+// Fecha de inicio y fin del evento (esto ya no se usa porque luego lo metí como arrays para meter más de un evento)
 $fechaInicio = '2023-06-23 23:59:00';
 $fechaFin = '2023-06-24 02:35:00';
 $nombreEvento='Noche de San Juan';
 $descripcionEvento ='Hoguera de la noche más corta del año y dazas trivales en torno a una fogata.';
 $lugarEvento="Playa de poniente";
+
 
 //Listado de fiestas de Gijón
 $eventos=[
@@ -23,6 +24,8 @@ $eventos=[
     'lugar'=>       'Playa de Poniente'
     ]
 ];
+
+
 
 // Función para formatear la fecha y hora en el formato requerido por el archivo ICS
 function formatearFecha($fecha) {
